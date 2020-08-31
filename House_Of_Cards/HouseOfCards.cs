@@ -24,37 +24,11 @@ namespace House_Of_Cards
             
             _currentPlayerIndex = 0;
         }
-        public void Run()
-        {
-            GenerateCards();
-        }
-        private void GenerateCards()
-        {
-
-        }
-        private void distributeCards()
-        {
-
-        }
-        public void NextMove()
+        public void GenerateCards()
         {
 
         }
         
-
-        private void giveCard(Player player)
-        {
-
-        }
-
-        private void getCardFromPlayer(Player player)
-        {
-
-        }
-        private void HintPlayer(Player player)
-        {
-
-        }
         public void AddPlayerToTheGame(Player player)
         {
             if (groupOfPlayers.players.Count >= 4)

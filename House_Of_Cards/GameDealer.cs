@@ -11,5 +11,28 @@
         {
             _game.AddPlayerToTheGame(player);
         }
+        private void distributeCards()
+        {
+
+        }
+        public void NextMove()
+        {
+
+        }
+
+
+        private void giveCard(Player player)
+        {
+
+        }
+
+        private void getCardFromPlayer(Player player)
+        {
+
+        }
+        private void HintPlayer(Player player)
+        {
+
+        }
     }
 }
