@@ -8,8 +8,8 @@ namespace House_Of_Cards
     public class HouseOfCards
     {
         public List<Card> AllCards { get; set; }
-        public List<Card> CardsPot { get; set; }
-        public GameGroup groupOfPlayers { get; set; }
+        public List<List<Card>> CardsPot { get; set; }
+        public GameGroup GroupOfPlayers { get; set; }
         public int StrikesLeft { get; set; }
         public int HintsLeft { get; set; }
         private List<string> _cardColors;
@@ -18,35 +18,45 @@ namespace House_Of_Cards
         public HouseOfCards(GameGroup group)
         {
             AllCards = new List<Card>();
-            CardsPot = new List<Card>();
-            groupOfPlayers = group;
+            CardsPot = new List<List<Card>>(); //refactor
+            CardsPot.Add(new List<Card>());
+            CardsPot.Add(new List<Card>());
+            CardsPot.Add(new List<Card>());
+            CardsPot.Add(new List<Card>());
+            CardsPot.Add(new List<Card>());
+            GroupOfPlayers = group;
             StrikesLeft = 4;
             HintsLeft = 5;
             _cardColors = new List<string>() { "green", "red", "blue", "yellow", "white" };
         }
         public void GenerateCards()
-        {
-            // move values like colors, numbers to conf file
-            for (int i = 1; i <= 5; i++)
+        {//refactor
+            for (int i = 0; i < 5; i++)
             {
-                foreach (var color in _cardColors)
-                {
-                    AllCards.Add(new Card(i, color));
-                }
+                AllCards.Add(new Card(1, _cardColors[i]));
+                AllCards.Add(new Card(1, _cardColors[i]));
+                AllCards.Add(new Card(1, _cardColors[i]));
+                AllCards.Add(new Card(2, _cardColors[i]));
+                AllCards.Add(new Card(2, _cardColors[i]));
+                AllCards.Add(new Card(3, _cardColors[i]));
+                AllCards.Add(new Card(3, _cardColors[i]));
+                AllCards.Add(new Card(4, _cardColors[i]));
+                AllCards.Add(new Card(4, _cardColors[i]));
+                AllCards.Add(new Card(5, _cardColors[i]));
+
             }
-            CardsPot = new List<Card>(AllCards);
         }
         
         public void AddPlayerToTheGame(Player player)
         {
-            if (groupOfPlayers.players.Count >= 4)
+            if (GroupOfPlayers.players.Count >= 4)
             {
                 Console.WriteLine("Reached group limit (4)! Cannot add any more players to the game.");
             }
             else
             {
-                groupOfPlayers.AddPlayer(player);
-                player.joinGame(groupOfPlayers);
+                GroupOfPlayers.AddPlayer(player);
+                player.joinGame(GroupOfPlayers);
             }
         }
     }
