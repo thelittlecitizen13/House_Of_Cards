@@ -11,7 +11,7 @@ namespace House_Of_Cards
         public GameGroup groupOfPlayers { get; set; }
         public int StrikesLeft { get; set; }
         public int HintsLeft { get; set; }
-        private int _currentPlayerIndex;
+        
         
 
         public HouseOfCards(GameGroup group)
@@ -21,8 +21,6 @@ namespace House_Of_Cards
             groupOfPlayers = group;
             StrikesLeft = 4;
             HintsLeft = 5;
-            
-            _currentPlayerIndex = 0;
         }
         public void GenerateCards()
         {
