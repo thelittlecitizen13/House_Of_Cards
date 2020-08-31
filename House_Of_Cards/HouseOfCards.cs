@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
+using System;
 
 namespace House_Of_Cards
 {
@@ -30,19 +32,21 @@ namespace House_Of_Cards
         {
 
         }
+        private void distributeCards()
+        {
+
+        }
         public void NextMove()
         {
 
         }
         
-        private void distributeCards()
-        {
 
-        }
         private void giveCard(Player player)
         {
 
         }
+
         private void getCardFromPlayer(Player player)
         {
 
@@ -50,6 +54,18 @@ namespace House_Of_Cards
         private void HintPlayer(Player player)
         {
 
+        }
+        public void AddPlayerToTheGame(Player player)
+        {
+            if (groupOfPlayers.players.Count >= 4)
+            {
+                Console.WriteLine("Reached group limit (4)! Cannot add any more players to the game.");
+            }
+            else
+            {
+                groupOfPlayers.AddPlayer(player);
+                player.joinGame(groupOfPlayers);
+            }
         }
     }
 }

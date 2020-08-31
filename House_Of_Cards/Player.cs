@@ -8,10 +8,9 @@ namespace House_Of_Cards
         public string Name { get; set; }
         public List<Card> HandCards { get; set; }
 
-        public Player(string name, GameGroup group)
+        public Player(string name)
         {
             Name = name;
-            _group = group;
         }
 
         public int Choose()
@@ -19,9 +18,10 @@ namespace House_Of_Cards
             // return choice of act to do
             return 1;
         }
-        private void addToGroup()
+        public void joinGame(GameGroup group)
         {
-            // add player to group
+            System.Console.WriteLine($"Welcome to the game, {Name}!");
+            _group = group;
         }
     }
 }

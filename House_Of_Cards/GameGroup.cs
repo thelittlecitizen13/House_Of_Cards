@@ -12,15 +12,7 @@ namespace House_Of_Cards
         }
         public void AddPlayer(Player player)
         {
-            if (players.Count >= 4)
-            {
-                Console.WriteLine("Reached group limit (4)! Cannot add any more players to the game.");
-            }
-            else
-            {
-                players.Add(player);
-                Console.WriteLine($"Welcome to the game, {player.Name}");
-            }
+            players.Add(player);
         }
     }
 }
