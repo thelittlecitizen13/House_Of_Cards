@@ -9,8 +9,4 @@ namespace House_Of_Cards
             Console.WriteLine("Hello World!");
         }
     }
-    public class GameGroup
-    {
-
-    }
 }
